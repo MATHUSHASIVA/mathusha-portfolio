@@ -8,7 +8,7 @@ import { componentTagger } from "lovable-tagger";
 // Assumption: repository will be published at https://<username>.github.io/my-awesome-folio-96/
 export default defineConfig(({ mode }) => ({
   // set base for production builds so generated asset paths are correct on GitHub Pages
-  base: mode === "development" ? "/" : "/my-awesome-folio-96/",
+  base: mode === "development" ? "/" : "/mathusha-portfolio/",
   server: {
     host: "::",
     port: 8080,
