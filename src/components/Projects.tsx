@@ -88,19 +88,22 @@ export function Projects() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="p-6 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 border-border/50 flex flex-col group"
+                className="p-6 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500 ease-out border-border/50 flex flex-col group cursor-pointer relative overflow-hidden"
               >
-                <div className="space-y-4 flex-1">
+                {/* Gradient overlay that appears on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
+                
+                <div className="space-y-4 flex-1 relative z-10">
                   <div className="space-y-2">
                     <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-xl font-semibold leading-tight">
+                      <h3 className="text-xl font-semibold leading-tight group-hover:text-primary transition-colors duration-300">
                         {project.title}
                       </h3>
                       {project.github && (
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="h-8 w-8 flex-shrink-0 hover:scale-110 transition-transform"
+                          className="h-8 w-8 flex-shrink-0 hover:scale-125 hover:rotate-12 hover:bg-primary/10 hover:text-primary transition-all duration-300 ease-out opacity-70 group-hover:opacity-100"
                           asChild
                         >
                           <a
@@ -114,14 +117,14 @@ export function Projects() {
                         </Button>
                       )}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">
                       <span>{project.period}</span>
                       <span>•</span>
                       <span>{project.type}</span>
                     </div>
                   </div>
 
-                  <p className="text-foreground/80 text-sm leading-relaxed">
+                  <p className="text-foreground/80 text-sm leading-relaxed group-hover:text-foreground transition-colors duration-300">
                     {project.description}
                   </p>
 
@@ -130,7 +133,7 @@ export function Projects() {
                       <Badge
                         key={tech}
                         variant="outline"
-                        className="text-xs border-primary/30"
+                        className="text-xs border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-primary hover:scale-105 transition-all duration-300 ease-out cursor-pointer"
                       >
                         {tech}
                       </Badge>
