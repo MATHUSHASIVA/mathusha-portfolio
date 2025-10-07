@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 // Use a base path when building for GitHub Pages so asset URLs include the repo name.
-// Assumption: repository will be published at https://<username>.github.io/my-awesome-folio-96/
+// Assumption: repository will be published at https://<username>.github.io/mathusha-portfolio/
 export default defineConfig(({ mode }) => ({
   // set base for production builds so generated asset paths are correct on GitHub Pages
   base: mode === "development" ? "/" : "/mathusha-portfolio/",
