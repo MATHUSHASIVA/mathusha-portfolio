@@ -71,77 +71,102 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              Projects
+    <section id="projects" className="py-20 lg:py-28 bg-background relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 opacity-3">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-l from-accent/20 to-transparent rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto space-y-16">
+          <div className="text-center space-y-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+              Featured Projects
             </h2>
-            <div className="h-1 w-20 gradient-primary mx-auto rounded-full"></div>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              A selection of projects showcasing my expertise in AI, ML, and full-stack development
+            <div className="flex items-center justify-center space-x-2">
+              <div className="h-1 w-8 bg-primary rounded-full"></div>
+              <div className="h-1 w-20 gradient-primary rounded-full"></div>
+              <div className="h-1 w-8 bg-accent rounded-full"></div>
+            </div>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              A showcase of innovative solutions in AI, ML, and full-stack development
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="p-6 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500 ease-out border-border/50 flex flex-col group cursor-pointer relative overflow-hidden"
-              >
-                {/* Gradient overlay that appears on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
-                
-                <div className="space-y-4 flex-1 relative z-10">
-                  <div className="space-y-2">
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-xl font-semibold leading-tight group-hover:text-primary transition-colors duration-300">
-                        {project.title}
-                      </h3>
-                      {project.github && (
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="h-8 w-8 flex-shrink-0 hover:scale-125 hover:rotate-12 hover:bg-primary/10 hover:text-primary transition-all duration-300 ease-out opacity-70 group-hover:opacity-100"
-                          asChild
-                        >
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="View project on GitHub"
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {projects.map((project, index) => {
+              const isAI = project.tech.some(tech => 
+                ['LangGraph', 'LangChain', 'Groq', 'LLMs', 'STFT', 'CNN', 'LSTM', 'TensorFlow', 'Hugging Face', 'BLIP', 'Falcon-7B', 'FAISS'].includes(tech)
+              );
+              
+              return (
+                <Card
+                  key={index}
+                  className="p-8 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-3 hover:scale-[1.03] transition-all duration-500 ease-out border-border/50 flex flex-col group cursor-pointer relative overflow-hidden"
+                >
+                  {/* Enhanced gradient overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${isAI ? 'from-primary/8 to-accent/8' : 'from-accent/8 to-primary/8'} opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out`} />
+                  
+                  {/* Project category indicator */}
+                  <div className={`absolute top-0 right-0 w-16 h-16 ${isAI ? 'bg-gradient-to-br from-primary to-accent' : 'bg-gradient-to-br from-accent to-primary'} opacity-10 group-hover:opacity-20 transition-opacity duration-500`} style={{clipPath: 'polygon(100% 0%, 0% 100%, 100% 100%)'}}></div>
+                  
+                  <div className="space-y-6 flex-1 relative z-10">
+                    <div className="space-y-3">
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className={`text-xl font-bold leading-tight transition-all duration-300 ${isAI ? 'group-hover:text-primary' : 'group-hover:text-accent'}`}>
+                          {project.title}
+                        </h3>
+                        {project.github && (
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className={`h-9 w-9 flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 ease-out opacity-70 group-hover:opacity-100 ${isAI ? 'hover:bg-primary/10 hover:text-primary' : 'hover:bg-accent/10 hover:text-accent'}`}
+                            asChild
                           >
-                            <ExternalLink className="h-4 w-4" />
-                          </a>
-                        </Button>
-                      )}
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="View project on GitHub"
+                            >
+                              <ExternalLink className="h-5 w-5" />
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                      
+                      <div className="flex items-center gap-3 text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">
+                        <span className="font-medium">{project.period}</span>
+                        <span className="w-1 h-1 bg-primary rounded-full"></span>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${isAI ? 'bg-primary/10 text-primary' : 'bg-accent/10 text-accent'}`}>
+                          {project.type}
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">
-                      <span>{project.period}</span>
-                      <span>•</span>
-                      <span>{project.type}</span>
+
+                    <p className="text-foreground/80 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <Badge
+                          key={tech}
+                          variant="outline"
+                          className={`text-xs px-3 py-1 transition-all duration-300 ease-out cursor-pointer hover:scale-105 ${isAI ? 'border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-primary' : 'border-accent/30 hover:border-accent hover:bg-accent/10 hover:text-accent'}`}
+                          style={{
+                            animationDelay: `${techIndex * 50}ms`
+                          }}
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-
-                  <p className="text-foreground/80 text-sm leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {project.tech.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="outline"
-                        className="text-xs border-primary/30 hover:border-primary hover:bg-primary/10 hover:text-primary hover:scale-105 transition-all duration-300 ease-out cursor-pointer"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>
