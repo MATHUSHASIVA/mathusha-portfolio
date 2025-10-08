@@ -5,28 +5,34 @@ import { ExternalLink } from "lucide-react";
 
 const certifications = [
   {
-    title: "Deep Learning Specialization",
-    issuer: "Coursera / Andrew Ng",
-    date: "2024",
-    url: "https://www.coursera.org/",
+    title: "Supervised Machine Learning: Regression and Classification",
+    issuer: "Coursera",
+    date: "",
+    url: "https://coursera.org/share/62cb09d964a996a18100abd270b22918",
   },
   {
-    title: "AWS Certified Solutions Architect – Associate",
-    issuer: "Amazon Web Services (AWS)",
-    date: "2025",
-    url: "https://aws.amazon.com/certification/",
+    title: "Advanced Machine Learning Algorithms",
+    issuer: "Coursera",
+    date: "",
+    url: "https://coursera.org/share/deb29b48b41d7ffa4e6551e08d8ed185",
   },
   {
-    title: "Hugging Face: Fine-Tuning Transformers",
-    issuer: "Hugging Face",
-    date: "2024",
-    url: "https://huggingface.co/",
+    title: "Introduction to TensorFlow for AI, ML, and Deep Learning",
+    issuer: "DeepLearning.AI / Coursera",
+    date: "",
+    url: "https://coursera.org/share/c18de09b57e3dc84af63c4cb5db344e3",
   },
   {
-    title: "Google Cloud: Professional Machine Learning Engineer",
-    issuer: "Google Cloud",
-    date: "2025",
-    url: "https://cloud.google.com/certification",
+    title: "Azure AI Fundamentals: Explore Visual Tools for Machine Learning",
+    issuer: "Microsoft Learn",
+    date: "",
+    url: "https://learn.microsoft.com/en-us/training/achievements/learn.wwl.create-no-code-predictive-models-with-azure-machine-learning.trophy?username=MathushaSivaananthan-8245&sharingId=413898810EB935C8",
+  },
+  {
+    title: "Create Machine Learning Models with Azure ML",
+    issuer: "Microsoft Learn",
+    date: "",
+    url: "https://learn.microsoft.com/en-us/training/achievements/learn.wwl.create-machine-learn-models.trophy?username=MathushaSivaananthan-8245&sharingId=413898810EB935C8",
   },
 ];
 
