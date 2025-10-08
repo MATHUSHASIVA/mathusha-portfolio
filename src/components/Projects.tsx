@@ -5,22 +5,13 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Production-Grade Financial Analysis & Screening Pipeline",
-    period: "Aug 2025 – Sep 2025",
-    description:
-      "Developed a modular, production-grade financial analysis pipeline for automated stock screening, technical and fundamental metrics calculation, signal detection, and results export, following best practices and robust testing.",
-    tech: ["Typer (CLI)", "SQLAlchemy", "yfinance", "Pytest", "UV", "Pydantic", "YAML"],
-    type: "Individual Project",
-    github: "https://github.com/mathushasiva",
-  },
-  {
     title: "AI Travel Planner with Agentic Workflow",
     period: "Jul 2025 – Aug 2025",
     description:
       "Developed an AI-powered travel planning application with itinerary generation, real-time weather integration, and intelligent recommendations using agentic workflow architecture for autonomous trip organization.",
     tech: ["LangGraph", "Streamlit", "FastAPI", "Groq", "REST APIs"],
     type: "Individual Project",
-    github: "https://github.com/mathushasiva",
+    github: "https://github.com/MATHUSHASIVA/AI-Trip-Planner.git",
   },
   {
     title: "AI-Driven Image Transformation Platform",
@@ -29,7 +20,16 @@ const projects = [
       "Built intelligent image editing solution with automated enhancement tools, dynamic filters, and instant processing. Showcases AI implementation and comprehensive full-stack development skills.",
     tech: ["Next.js", "TypeScript", "MongoDB", "Clerk", "Cloudinary AI", "Shadcn", "TailwindCSS"],
     type: "Individual Project",
-    github: "https://github.com/mathushasiva",
+    github: "https://github.com/MATHUSHASIVA/AI-Image-SaaS-Platform.git",
+  },
+  {
+    title: "Production-Grade Financial Analysis & Screening Pipeline",
+    period: "Aug 2025 – Sep 2025",
+    description:
+      "Developed a modular, production-grade financial analysis pipeline for automated stock screening, technical and fundamental metrics calculation, signal detection, and results export, following best practices and robust testing.",
+    tech: ["Typer (CLI)", "SQLAlchemy", "yfinance", "Pytest", "UV", "Pydantic", "YAML"],
+    type: "Individual Project",
+    github: "https://github.com/MATHUSHASIVA/Production-Grade-Financial-Analysis-Pipeline.git",
   },
   {
     title: "AI-Based Power Quality Disturbance Classification",
@@ -38,7 +38,7 @@ const projects = [
       "Applied STFT to transform power signals into spectrum images and developed CNN and CNN with LSTM, achieving 98% highest accuracy for power quality disturbances.",
     tech: ["MATLAB", "STFT", "TensorFlow", "CNN", "LSTM"],
     type: "Group Project",
-    github: "https://github.com/mathushasiva",
+    github: "https://github.com/MATHUSHASIVA/An-AI-based-Approach-for-Improved-Power-Quality-Disturbances-Detection-and-Classification.git",
   },
   {
     title: "Interactive Image Gallery Web Application",
@@ -47,7 +47,7 @@ const projects = [
       "A scalable web application that allows users to create accounts, upload and organize images, explore galleries, connect with others, and enjoy seamless and secure image sharing with social interaction.",
     tech: ["React", "Node.js", "MongoDB", "JWT", "REST API"],
     type: "Individual Project",
-    github: "https://github.com/mathushasiva",
+    github: "https://github.com/MATHUSHASIVA/Photo-Sharing-Ap.git",
   },
   {
     title: "Image-to-Story Generator",
@@ -56,7 +56,7 @@ const projects = [
       "Built a Streamlit web app that transforms images into narrated short stories by integrating vision, language, and speech processing.",
     tech: ["Streamlit", "BLIP", "Falcon-7B", "gTTS", "Hugging Face"],
     type: "Individual Project",
-    github: "https://github.com/mathushasiva",
+    github: "https://github.com/MATHUSHASIVA/Image-to-Story-Generator.git",
   },
   {
     title: "AI-Powered Chatbot for Harry Potter Books",
@@ -65,7 +65,7 @@ const projects = [
       "Developed a document-aware chatbot using LangChain to answer questions from Harry Potter books. Integrated multiple LLMs for text generation, FAISS for efficient document retrieval, and deployed a user-friendly interface.",
     tech: ["Python", "LangChain", "Hugging Face", "LLMs", "FAISS", "Gradio"],
     type: "Individual Project",
-    github: "https://github.com/mathushasiva",
+    github: "https://github.com/MATHUSHASIVA/Harry-Potter-Retrieval-Augmented-QA-Chatbot-using-LangChain.git",
   },
 ];
 
